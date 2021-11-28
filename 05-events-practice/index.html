@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+
+<body>
+  <button id="btn">Click me maybe!</button>
+  <div id="root"></div>
+</body>
+
+<script type="module">
+
+  class Component {
+    constructor(foo) {
+      this.foo = foo;
+
+      this.onClick = this.onClick.bind(this);
+      this.addEventListeners();
+    }
+
+    onClick (event) {
+      console.error(event);
+      console.error(this.foo);
+    }
+
+    addEventListeners () {
+      btn.addEventListener('click', this.onClick)
+    }
+
+    destroy () {
+      btn.removeEventListener('click', this.onClick)
+    }
+  }
+
+  const obj = new Component('hello events!');
+</script>

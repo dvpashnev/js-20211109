@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Module #5</title>
-  <link rel="stylesheet" href="05-events-practice/dom.css">
+  <link rel="stylesheet" href="dom.css">
 
 </head>
 <body>
@@ -87,13 +87,13 @@
         console.error('currentTarget', event.currentTarget);
       });
 
-      // orange.addEventListener('click', event => {
-      //   console.error('orange', event)
-      // });
-      //
-      // blue.addEventListener('click', event => {
-      //   console.error('blue', event)
-      // });
+      orange.addEventListener('click', event => {
+        console.error('orange', event)
+      });
+
+      blue.addEventListener('click', event => {
+        console.error('blue', event)
+      });
     </script>
 
   </section>

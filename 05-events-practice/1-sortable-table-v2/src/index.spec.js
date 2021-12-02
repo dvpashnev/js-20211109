@@ -101,8 +101,6 @@ describe('events-practice/sortable-table-v2', () => {
     const firstRow = body.firstElementChild;
     const lastRow = body.lastElementChild;
 
-    // console.log('body', body);
-
     expect(firstRow).toHaveTextContent('Powerbank аккумулятор Hiper SP20000');
     expect(lastRow).toHaveTextContent('Детский велосипед Lexus Trike Racer Trike');
   });
@@ -125,12 +123,6 @@ describe('events-practice/sortable-table-v2', () => {
     expect(lastRow).toHaveTextContent('3');
   });
 
-  it('foo', () => {
-    setTimeout(()=> {
-      expect(1).toEqual(2);
-    })
-  })
-
   it('should move arrow icon to the corresponding column after sorting', () => {
     const { children } = sortableTable.subElements.header;
     const [_, price, sales] = children;
@@ -141,9 +133,6 @@ describe('events-practice/sortable-table-v2', () => {
     });
 
     price.dispatchEvent(pointerdown);
-
-    console.log('foo', sortableTable.subElements.header.children[1].innerHTML);
-    console.log('bar', price.innerHTML);
 
     expect(price).toContainHTML(arrow);
 

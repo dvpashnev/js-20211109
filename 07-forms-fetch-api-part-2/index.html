@@ -6,65 +6,19 @@
 </body>
 
 <script>
+  btn.addEventListener('click', () => {
+    const myEvent = new CustomEvent('range-select', {
+      detail: {
+        from: 1,
+        to: 2
+      },
+      bubbles: true
+    });
 
-  const obj = {
-    async load () {
-      try {
-        const response1 = await fetch('https://jsonplaceholder.typicode.com/todos/1');
-        const data = await response.json();
+    btn.dispatchEvent(myEvent);
+  });
 
-      } catch (error) {
-        console.error('error', error);
-      }
-    }
-  }
-
-  console.error(1111);
-
-  a + b;
-
-  console.error(1111);
-
-
-  // obj
-  //   .load()
-  //   .catch(error => {
-  //     console.error('error', error);
-  //   })
-
-  // fetch('https://jsonplaceholder.typicode.com/todos/1')
-  //   .then(response => {
-  //
-  //   })
-  //   .then(json => {
-  //     throw 1;
-  //     // console.log(json)
-  //   })
-  //   // .catch(error => console.error('error', error))
-  //
-
-
-
-
-  // console.error(obj);
-
-  // const timeout = {
-  //   then (callback) {
-  //     setTimeout(() => {
-  //       callback();
-  //     }, 2000);
-  //   }
-  // }
-
-  // timeout
-  //   .then(() => {
-  //     console.error(1111);
-  //   });
-  //
-  //
-  // fetch('https://jsonplaceholder.typicode.com/todos/1')
-  //   .then();
-
-
-
+  btn.addEventListener('range-select', event => {
+    console.error(event);
+  });
 </script>
